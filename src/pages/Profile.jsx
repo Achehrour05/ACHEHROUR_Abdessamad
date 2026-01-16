@@ -1,8 +1,11 @@
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import ContactModal from '../components/ContactModal';
 import blackImage from '../assets/black_image.jpg';
 
 function Profile() {
     const navigate = useNavigate();
+    const [isContactOpen, setIsContactOpen] = useState(false);
 
     const technicalSkills = {
         "Programming": ["C/C++/C#", "Java", "Python"],
@@ -299,6 +302,28 @@ function Profile() {
             >
                 ← back
             </button>
+
+            {/* Contact button */}
+            <button
+                onClick={() => setIsContactOpen(true)}
+                style={{
+                    position: 'fixed',
+                    top: '2rem',
+                    right: '6.5rem',
+                    border: 'none',
+                    background: 'transparent',
+                    color: '#fff',
+                    fontSize: '1.2rem',
+                    fontFamily: 'serif',
+                    fontStyle: 'italic',
+                    cursor: 'pointer',
+                    zIndex: 100,
+                    outline: 'none'
+                }}
+            >
+                contact
+            </button>
+            <ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
 
             {/* Info button - Top Right */}
             <button
