@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import SkillsMatrix from '../components/SkillsMatrix';
 
 function Info() {
     const navigate = useNavigate();
@@ -88,11 +89,9 @@ function Info() {
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                     <div style={{ fontSize: '0.9rem', color: '#888', textTransform: 'uppercase', letterSpacing: '0.1em', fontFamily: 'sans-serif' }}>
-                        Key Skills
+                        Technical Proficiency & Arsenal
                     </div>
-                    <div style={{ fontSize: '1rem', color: '#ccc', lineHeight: '1.8' }}>
-                        Machine Learning • Deep Learning • React.js • Node.js • Python • Java • C/C++ • SQL/NoSQL • Docker • DevOps
-                    </div>
+                    <SkillsMatrix />
                 </div>
 
                 <div style={{
