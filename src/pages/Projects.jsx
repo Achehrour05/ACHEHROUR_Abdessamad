@@ -69,8 +69,22 @@ function Projects() {
                 width: '100%'
             }}>
                 {filteredProjects.length === 0 ? (
-                    <div style={{ color: '#888', fontSize: '1.2rem', textAlign: 'center', padding: '4rem 1rem' }}>
-                        No projects match "{searchQuery}"
+                    <div style={{ color: '#888', fontSize: '1rem', textAlign: 'center', padding: '4rem 1rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
+                        <p>No projects match "{searchQuery}" in this category.</p>
+                        <button
+                            onClick={() => { setSearchQuery(''); setActiveFilter('all'); }}
+                            style={{
+                                padding: '0.5rem 1.2rem',
+                                borderRadius: '9999px',
+                                border: '1px solid rgba(255,255,255,0.2)',
+                                background: 'transparent',
+                                color: '#fff',
+                                cursor: 'pointer',
+                                fontSize: '0.85rem'
+                            }}
+                        >
+                            Reset all filters
+                        </button>
                     </div>
                 ) : (
                     filteredProjects.map((project, index) => (
