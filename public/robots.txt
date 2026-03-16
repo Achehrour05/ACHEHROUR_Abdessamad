@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://achehrour05.github.io/ACHEHROUR_Abdessamad/sitemap.xml
